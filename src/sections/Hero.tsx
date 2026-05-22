@@ -22,7 +22,6 @@ export default function Hero({ onBeginJourney }: HeroProps) {
     >
       {/* Heading 1 */}
       <h1
-        className="animate-fade-rise"
         style={{
           fontFamily: "'Instrument Serif', serif",
           fontSize: 'clamp(3rem, 8vw, 6rem)', // Responsively handles text-5xl to text-8xl scale
@@ -44,7 +43,6 @@ export default function Hero({ onBeginJourney }: HeroProps) {
 
       {/* Subtext */}
       <p
-        className="animate-fade-rise-delay"
         style={{
           color: 'var(--muted-foreground)',
           fontSize: 'clamp(0.875rem, 2.5vw, 1rem)',
@@ -59,7 +57,7 @@ export default function Hero({ onBeginJourney }: HeroProps) {
 
       {/* CTA Button */}
       <button
-        className="liquid-glass animate-fade-rise-delay-2"
+        className="liquid-glass"
         onClick={onBeginJourney}
         style={{
           borderRadius: '9999px',
