@@ -41,14 +41,7 @@ function App() {
       />
 
       {/* ── Dark Vignette Overlay ── */}
-      <div
-        style={{
-          position: 'fixed',
-          inset: 0,
-          backgroundColor: 'rgba(0,0,0,0.4)',
-          zIndex: 1,
-        }}
-      />
+      <div className="video-overlay" />
 
       {/* ── Content Container (above video) ── */}
       <div style={{ position: 'relative', zIndex: 10 }}>
