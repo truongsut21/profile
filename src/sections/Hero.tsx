@@ -52,7 +52,7 @@ export default function Hero({ onBeginJourney }: HeroProps) {
           fontFamily: 'var(--font-body)',
         }}
       >
-        I am Đỗ Vân Trường, a Fullstack Developer specializing in building high-performance web architectures, automating workflows, and integrating intelligent AI-driven systems to deliver fluid, user-centric interfaces.
+        I am Do Van Truong, a Fullstack Developer specializing in building high-performance web architectures, automating workflows, and integrating intelligent AI-driven systems to deliver fluid, user-centric interfaces.
       </p>
 
       {/* CTA Button */}
