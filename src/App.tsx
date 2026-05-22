@@ -6,6 +6,7 @@ import Experience from './sections/Experience';
 import Skills from './sections/Skills';
 import Projects from './sections/Projects';
 import Contact from './sections/Contact';
+import videoPoster from './assets/hf_20260314_131748_f2ca2a28-fed7-44c8-b9a9-bd9acdd5ec31-start.webp';
 
 function App() {
   const handleBeginJourney = () => {
@@ -29,6 +30,7 @@ function App() {
         loop
         muted
         playsInline
+        poster={videoPoster}
         style={{
           position: 'fixed',
           inset: 0,
