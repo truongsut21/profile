@@ -35,12 +35,12 @@ export default function Navbar() {
         top: 0,
         left: 0,
         right: 0,
-        zIndex: 50,
-        transition: 'background 0.3s ease, backdrop-filter 0.3s ease',
-        background: scrolled ? 'rgba(0,15,30,0.6)' : 'transparent',
-        backdropFilter: scrolled ? 'blur(16px)' : 'none',
-        WebkitBackdropFilter: scrolled ? 'blur(16px)' : 'none',
-        borderBottom: scrolled ? '1px solid rgba(255,255,255,0.06)' : 'none',
+        zIndex: 100,
+        transition: 'background 0.3s ease, border-bottom 0.3s ease',
+        background: scrolled || menuOpen ? 'rgba(0, 15, 30, 0.75)' : 'transparent',
+        backdropFilter: scrolled || menuOpen ? 'blur(16px)' : 'none',
+        WebkitBackdropFilter: scrolled || menuOpen ? 'blur(16px)' : 'none',
+        borderBottom: scrolled || menuOpen ? '1px solid rgba(255, 255, 255, 0.06)' : 'none',
       }}
     >
       <nav
@@ -177,12 +177,10 @@ export default function Navbar() {
       {/* Mobile Dropdown Menu */}
       {menuOpen && (
         <div
-          className="liquid-glass animate-slide-down show-mobile"
+          className="animate-slide-down show-mobile"
           style={{
-            position: 'absolute',
-            top: '64px',
-            left: 0,
-            right: 0,
+            position: 'relative',
+            width: '100%',
             padding: '1.5rem',
             display: 'none',
             flexDirection: 'column',

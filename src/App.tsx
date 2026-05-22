@@ -43,11 +43,11 @@ function App() {
       {/* ── Dark Vignette Overlay ── */}
       <div className="video-overlay" />
 
+      {/* ── Navbar ── */}
+      <Navbar />
+
       {/* ── Content Container (above video) ── */}
       <div style={{ position: 'relative', zIndex: 10 }}>
-        {/* Section 2 — Navbar */}
-        <Navbar />
-
         {/* Section 3 — Hero */}
         <Hero onBeginJourney={handleBeginJourney} />
 

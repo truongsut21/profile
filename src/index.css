@@ -261,4 +261,8 @@ body {
   .align-start-mobile {
     align-items: flex-start !important;
   }
+
+  .liquid-glass {
+    padding: 16px !important;
+  }
 }
