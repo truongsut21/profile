@@ -59,7 +59,7 @@ export default function About() {
             }}
           >
             <p>
-              Fullstack Developer with 2.5+ years of hands-on experience in building, maintaining, and scaling modern web applications. Specializing in responsive frontend architectures, high-performance UI optimization, and backend logic integration.
+              Fullstack Developer nearly 3 years of hands-on experience in building, maintaining, and scaling modern web applications. Specializing in responsive frontend architectures, high-performance UI optimization, and backend logic integration.
             </p>
             <p>
               Demonstrated track record of performance optimization, including successfully accelerating 30+ production websites to achieve Google PageSpeed scores of 95+, significantly improving SEO rankings and user engagement.
