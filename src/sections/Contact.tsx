@@ -31,7 +31,7 @@ export default function Contact() {
 
   const handleCopyEmail = async () => {
     try {
-      await navigator.clipboard.writeText('dotruong0704@gmail.com');
+      await navigator.clipboard.writeText('dotruongxxx@gmail.com');
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
     } catch (err) {
@@ -50,7 +50,7 @@ export default function Contact() {
       setStatus('Please fill in all fields.');
       return;
     }
-    
+
     setStatus('Sending message...');
     const success = await discordService.sendNotification(
       formData.name,
@@ -155,7 +155,7 @@ export default function Contact() {
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
                 <Mail size={16} style={{ color: 'var(--muted-foreground)' }} />
                 <span style={{ fontSize: '0.9rem', color: 'var(--foreground)' }}>
-                  dotruong0704@gmail.com
+                  dotruongxxx@gmail.com
                 </span>
               </div>
               <button
@@ -193,7 +193,7 @@ export default function Contact() {
             >
               <Phone size={16} style={{ color: 'var(--muted-foreground)' }} />
               <span style={{ fontSize: '0.9rem', color: 'var(--foreground)' }}>
-                0334561645
+                033456xxx
               </span>
             </div>
 

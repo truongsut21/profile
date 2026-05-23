@@ -89,7 +89,7 @@ Animations:
 - Section header: "/ PATHWAY" and display heading: "Work Experience".
 - Chronological layout presenting his career path with technology icons (represented as minimalist Lucide React icons or badges with .liquid-glass styling):
 
-  * Company: Vietnix (05/2024 - Present)
+  * Company: Company X (05/2024 - Present)
     - Role: Fullstack Developer
     - Location: Ho Chi Minh City
     - Bullet points outlining duties:
@@ -133,8 +133,8 @@ Animations:
 8. CONTACT SECTION (Minimal form & details)
 - Section header: "/ INQUIRIES" and display heading: "Reach Us".
 - Display contact coordinates on one side:
-  - Email: dotruong0704@gmail.com (Include a "Copy" icon button using Lucide to quickly copy to clipboard).
-  - Phone: 0334561645
+  - Email: dotruongxxx@gmail.com (Include a "Copy" icon button using Lucide to quickly copy to clipboard).
+  - Phone: 033456xxx
   - Github: https://github.com/truongsut21 (Rendered as an elegant minimalist link button).
 - Simple contact form on the other side using .liquid-glass styled inputs (Name, Email, Message) and a minimalist "Send Message" button.
 
