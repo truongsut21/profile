@@ -31,7 +31,7 @@ export default function Contact() {
 
   const handleCopyEmail = async () => {
     try {
-      await navigator.clipboard.writeText('dotruongxxx@gmail.com');
+      await navigator.clipboard.writeText('dotruong0704@gmail.com');
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
     } catch (err) {
@@ -47,11 +47,11 @@ export default function Contact() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!formData.name || !formData.email || !formData.message) {
-      setStatus('Please fill in all fields.');
+      setStatus('Vui lòng điền đầy đủ thông tin.');
       return;
     }
 
-    setStatus('Sending message...');
+    setStatus('Đang gửi tin nhắn...');
     const success = await discordService.sendNotification(
       formData.name,
       formData.email,
@@ -59,11 +59,11 @@ export default function Contact() {
     );
 
     if (success) {
-      setStatus('Thank you! Your message has been sent successfully.');
+      setStatus('Cảm ơn bạn! Tin nhắn đã được gửi thành công.');
       setFormData({ name: '', email: '', message: '' });
       setTimeout(() => setStatus(null), 5000);
     } else {
-      setStatus('Failed to send message. Please try again or copy the email directly.');
+      setStatus('Gửi tin nhắn thất bại. Vui lòng thử lại hoặc sao chép email trực tiếp.');
     }
   };
 
@@ -91,7 +91,7 @@ export default function Contact() {
           marginBottom: '4rem',
         }}
       >
-        <span className="section-label">/ INQUIRIES</span>
+        <span className="section-label">/ LIÊN HỆ</span>
         <h2
           className="display-heading"
           style={{
@@ -99,7 +99,7 @@ export default function Contact() {
             lineHeight: '1.05',
           }}
         >
-          Reach Us
+          Liên Hệ
         </h2>
       </div>
 
@@ -124,7 +124,7 @@ export default function Contact() {
                 marginBottom: '1rem',
               }}
             >
-              Contact Details
+              Thông Tin Liên Hệ
             </h3>
             <p
               style={{
@@ -135,7 +135,7 @@ export default function Contact() {
                 marginBottom: '2rem',
               }}
             >
-              Feel free to reach out for collaborations, project inquiries, or just to say hello.
+              Đừng ngại liên hệ với tôi để hợp tác, trao đổi về dự án, hoặc đơn giản là gửi lời chào.
             </p>
           </div>
 
@@ -155,7 +155,7 @@ export default function Contact() {
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
                 <Mail size={16} style={{ color: 'var(--muted-foreground)' }} />
                 <span style={{ fontSize: '0.9rem', color: 'var(--foreground)' }}>
-                  dotruongxxx@gmail.com
+                  dotruong0704@gmail.com
                 </span>
               </div>
               <button
@@ -172,10 +172,10 @@ export default function Contact() {
                   fontWeight: 500,
                   transition: 'color 0.2s',
                 }}
-                title="Copy Email"
+                title="Sao chép Email"
               >
                 {copied ? <Check size={14} /> : <Copy size={14} />}
-                <span>{copied ? 'Copied!' : 'Copy'}</span>
+                <span>{copied ? 'Đã sao chép!' : 'Sao chép'}</span>
               </button>
             </div>
 
@@ -184,17 +184,42 @@ export default function Contact() {
               style={{
                 display: 'flex',
                 alignItems: 'center',
+                justifyContent: 'space-between',
                 gap: '0.75rem',
-                padding: '1.25rem',
+                padding: '1rem 1.25rem',
                 borderRadius: '0.75rem',
                 border: '1px solid rgba(255, 255, 255, 0.05)',
                 background: 'rgba(255, 255, 255, 0.02)',
               }}
             >
-              <Phone size={16} style={{ color: 'var(--muted-foreground)' }} />
-              <span style={{ fontSize: '0.9rem', color: 'var(--foreground)' }}>
-                033456xxx
-              </span>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+                <Phone size={16} style={{ color: 'var(--muted-foreground)' }} />
+                <span style={{ fontSize: '0.9rem', color: 'var(--foreground)' }}>
+                  0905371627
+                </span>
+              </div>
+              <a
+                href="tel:0905371627"
+                style={{
+                  background: 'none',
+                  border: 'none',
+                  cursor: 'pointer',
+                  color: 'var(--muted-foreground)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '0.25rem',
+                  fontSize: '0.75rem',
+                  fontWeight: 500,
+                  textDecoration: 'none',
+                  transition: 'color 0.2s',
+                }}
+                onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--foreground)')}
+                onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--muted-foreground)')}
+                title="Gọi ngay"
+              >
+                <Phone size={14} />
+                <span>Gọi ngay</span>
+              </a>
             </div>
 
             {/* GitHub Profile Coordinate */}
@@ -220,7 +245,7 @@ export default function Contact() {
               onMouseLeave={(e) => (e.currentTarget.style.transform = 'scale(1)')}
             >
               <GithubIcon size={18} />
-              <span>Connect on GitHub</span>
+              <span>Kết nối GitHub</span>
             </a>
           </div>
         </div>
@@ -236,14 +261,14 @@ export default function Contact() {
               marginBottom: '1.5rem',
             }}
           >
-            Send a Message
+            Gửi Tin Nhắn
           </h3>
 
           <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
             {/* Name Input */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
               <label style={{ fontSize: '0.75rem', color: 'var(--muted-foreground)', fontWeight: 500 }}>
-                Full Name
+                Họ và Tên
               </label>
               <input
                 type="text"
@@ -251,23 +276,23 @@ export default function Contact() {
                 value={formData.name}
                 onChange={handleInputChange}
                 className="glass-input"
-                placeholder="John Doe"
+                placeholder="Nguyễn Văn A"
                 required
               />
             </div>
 
-            {/* Email Input */}
+            {/* Email / Phone Input */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
               <label style={{ fontSize: '0.75rem', color: 'var(--muted-foreground)', fontWeight: 500 }}>
-                Email Address
+                Email hoặc SĐT
               </label>
               <input
-                type="email"
+                type="text"
                 name="email"
                 value={formData.email}
                 onChange={handleInputChange}
                 className="glass-input"
-                placeholder="johndoe@example.com"
+                placeholder="example@gmail.com / 0901234567"
                 required
               />
             </div>
@@ -275,7 +300,7 @@ export default function Contact() {
             {/* Message Input */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
               <label style={{ fontSize: '0.75rem', color: 'var(--muted-foreground)', fontWeight: 500 }}>
-                Message
+                Tin Nhắn
               </label>
               <textarea
                 name="message"
@@ -283,7 +308,7 @@ export default function Contact() {
                 onChange={handleInputChange}
                 className="glass-input"
                 rows={5}
-                placeholder="Tell us about your project..."
+                placeholder="Hãy cho tôi biết về dự án của bạn..."
                 style={{ resize: 'vertical' }}
                 required
               />
@@ -294,7 +319,7 @@ export default function Contact() {
               <p
                 style={{
                   fontSize: '0.85rem',
-                  color: status.includes('success') ? '#10B981' : status.includes('Sending') ? '#3B82F6' : '#EF4444',
+                  color: status.includes('thành công') ? '#10B981' : status.includes('Đang gửi') ? '#3B82F6' : '#EF4444',
                 }}
               >
                 {status}
@@ -324,7 +349,7 @@ export default function Contact() {
               onMouseLeave={(e) => (e.currentTarget.style.transform = 'scale(1)')}
             >
               <Send size={16} />
-              <span>Send Message</span>
+              <span>Gửi Tin Nhắn</span>
             </button>
           </form>
         </div>

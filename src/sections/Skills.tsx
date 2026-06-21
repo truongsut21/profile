@@ -6,19 +6,19 @@ interface SkillCategory {
 const SKILL_GROUPS: SkillCategory[] = [
   {
     title: 'Frontend',
-    skills: ['ReactJS', 'Next.js', 'Tailwind CSS', 'JavaScript'],
+    skills: ['ReactJS', 'Next.js', 'Tailwind CSS', 'JavaScript', 'TypeScript', 'Redux', 'Antd'],
   },
   {
     title: 'Backend & Database',
-    skills: ['Node.js', 'PHP', 'MySQL', 'PostgreSQL'],
-  },
-  {
-    title: 'AI & Automation',
-    skills: ['RAG', 'Embeddings', 'LLMs'],
+    skills: ['NodeJS', 'PostgreSQL', 'Redis', 'RESTful API', 'Playwright'],
   },
   {
     title: 'DevOps & Tools',
-    skills: ['Docker', 'Git', 'Figma'],
+    skills: ['Docker', 'Git', 'Figma', 'Antigravity'],
+  },
+  {
+    title: 'AI',
+    skills: ['RAG', 'Embeddings', 'LLM'],
   },
 ];
 
@@ -47,7 +47,7 @@ export default function Skills() {
           marginBottom: '4rem',
         }}
       >
-        <span className="section-label">/ CAPABILITIES</span>
+        <span className="section-label">/ NĂNG LỰC</span>
         <h2
           className="display-heading"
           style={{
@@ -55,7 +55,7 @@ export default function Skills() {
             lineHeight: '1.05',
           }}
         >
-          Technical Skills
+          Kỹ Năng Chuyên Môn
         </h2>
       </div>
 

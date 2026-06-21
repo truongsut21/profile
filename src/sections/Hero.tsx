@@ -32,13 +32,7 @@ export default function Hero({ onBeginJourney }: HeroProps) {
           color: 'var(--foreground)',
         }}
       >
-        AI writes faster.{' '}
-        <em
-          className="not-italic"
-          style={{ color: 'var(--muted-foreground)' }}
-        >
-          Thinking stays priceless
-        </em>
+        Đỗ Vân Trường
       </h1>
 
       {/* Subtext */}
@@ -52,7 +46,7 @@ export default function Hero({ onBeginJourney }: HeroProps) {
           fontFamily: 'var(--font-body)',
         }}
       >
-        I am Do Van Truong, a Fullstack Developer specializing in building high-performance web architectures, automating workflows, and integrating intelligent AI-driven systems to deliver fluid, user-centric interfaces.
+        Front-end Developer với 3 năm kinh nghiệm phát triển ứng dụng web bằng ReactJS và Next.js. Có kinh nghiệm xây dựng các hệ thống CRM, quản trị doanh nghiệp và ứng dụng xử lý dữ liệu thời gian thực, tập trung vào hiệu năng, trải nghiệm người dùng và chất lượng sản phẩm.
       </p>
 
       {/* CTA Button */}
@@ -78,7 +72,7 @@ export default function Hero({ onBeginJourney }: HeroProps) {
           e.currentTarget.style.transform = 'scale(1)';
         }}
       >
-        Begin Journey
+        Khám Phá
       </button>
     </section>
   );

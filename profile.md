@@ -66,14 +66,14 @@ Animations:
 2. NAVIGATION BAR (Fixed top, z-50, backdrop blur)
 - Logo: "Do Van Truong®" (® as <sup className="text-xs">), text-3xl tracking-tight, Instrument Serif font, text-foreground.
 - Nav links (hidden on mobile, md:flex): Home, About, Experience, Skills, Projects, Reach Us (text-xs uppercase tracking-widest, text-muted-foreground with hover:text-foreground transition).
-- CTA button: "Begin Journey" styled with .liquid-glass, rounded-full, px-6, py-2.5, text-xs uppercase, tracking-wider, hover:scale-[1.03].
+- CTA button: "Liên hệ ngay" styled with .liquid-glass, rounded-full, px-6, py-2.5, text-xs uppercase, tracking-wider, hover:scale-[1.03].
 
 ---
 3. HERO SECTION (Fullscreen backdrop video, vertically centered)
 - Position relative, z-10, flex column, centered, text-center, px-6, h-screen.
 - H1: "Where dreams rise through the silence." — text-5xl sm:text-7xl md:text-8xl, leading-[0.95], tracking-[-2.46px], max-w-7xl, font-normal, Instrument Serif. Wrap the words "dreams" and "through the silence." in <em className="not-italic text-muted-foreground"> for visual contrast. Apply class "animate-fade-rise".
 - Subtext: text-muted-foreground text-sm sm:text-base max-w-2xl mt-8 leading-relaxed. Use the text: "I am Do Van Truong, a Fullstack Developer building high-performance architectures and intelligent systems. Amid the digital noise, I engineer speed, absolute focus, and fluid interfaces." Apply class "animate-fade-rise-delay".
-- CTA button: "Begin Journey", .liquid-glass class, rounded-full, px-14, py-5, text-xs uppercase, tracking-widest, mt-12, hover:scale-[1.03] cursor-pointer. Apply class "animate-fade-rise-delay-2".
+- CTA button: "Liên hệ ngay", .liquid-glass class, rounded-full, px-14, py-5, text-xs uppercase, tracking-widest, mt-12, hover:scale-[1.03] cursor-pointer. Apply class "animate-fade-rise-delay-2".
 
 ---
 4. ABOUT & EDUCATION SECTION (Minimal layout)

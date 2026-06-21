@@ -30,19 +30,19 @@ interface Project {
 
 const PROJECTS: Project[] = [
   {
-    title: 'Real-Time Task Management System',
+    title: 'Hệ thống quản lý công việc Ontask tích hợp AI',
     category: 'Fullstack',
     period: '02/2024 - 05/2024',
-    description: 'Designed and engineered a collaborative task management platform utilizing Next.js, NestJS, and WebSockets. Features real-time task assignments, state updates, and instant chat channels. Awarded a perfect score of 10/10 for the graduation thesis.',
-    badges: ['Next.js', 'NestJS', 'WebSocket'],
+    description: 'Phát triển hệ thống quản lý công việc real-time với ReactJS, Antd, Tailwind, NodeJS, WebSocket, AWS S3 và PostgreSQL, hỗ trợ gợi ý phân công nhiệm vụ, trao đổi trực tiếp trên từng công việc và tối ưu trải nghiệm người dùng. Đạt 10/10 trong khóa luận tốt nghiệp.',
+    badges: ['ReactJS', 'Antd', 'Tailwind', 'NodeJS', 'WebSocket', 'AWS S3', 'PostgreSQL'],
     github: 'https://github.com/truongsut21',
   },
   {
-    title: 'Mobile Delivery Application System',
-    category: 'Fullstack',
-    period: '11/2025 - 02/2026',
-    description: 'Developed an end-to-end real-time delivery ecosystem using React Native, Next.js, and NestJS. Integrated WebSockets for instant order lifecycle updates, Google Maps API for live geolocation tracking and dynamic routing, and OpenAI for intelligent automated order generation.',
-    badges: ['React Native', 'Next.js', 'NestJS', 'OpenAI'],
+    title: 'Hệ thống giao hàng vận chuyển Bengo',
+    category: 'Mentor',
+    period: '01/2026 - 05/2026',
+    description: 'Phát triển hệ thống quản lý vận chuyển cho quản lý và tài xế bằng ReactJS, React Native, NodeJS và PostgreSQL. Hỗ trợ cập nhật trạng thái đơn hàng theo thời gian thực, quản lý hồ sơ tài xế, định vị GPS, tích hợp Google Maps, lưu trữ tệp trên AWS S3 và cung cấp RESTful API cho ứng dụng web/mobile.',
+    badges: ['ReactJS', 'React Native', 'NodeJS', 'PostgreSQL', 'Google Maps', 'AWS S3'],
     github: 'https://github.com/truongsut21',
   },
 ];
@@ -72,7 +72,7 @@ export default function Projects() {
           marginBottom: '4rem',
         }}
       >
-        <span className="section-label">/ WORKS</span>
+        <span className="section-label">/ DỰ ÁN</span>
         <h2
           className="display-heading"
           style={{
@@ -80,7 +80,7 @@ export default function Projects() {
             lineHeight: '1.05',
           }}
         >
-          Featured Creations
+          Dự Án Cá Nhân
         </h2>
       </div>
 
@@ -201,7 +201,7 @@ export default function Projects() {
                     }}
                     onMouseEnter={(e) => (e.currentTarget.style.opacity = '1')}
                     onMouseLeave={(e) => (e.currentTarget.style.opacity = '0.7')}
-                    title="View GitHub"
+                    title="Xem GitHub"
                   >
                     <GithubIcon size={18} />
                   </a>
@@ -220,7 +220,7 @@ export default function Projects() {
                     }}
                     onMouseEnter={(e) => (e.currentTarget.style.opacity = '1')}
                     onMouseLeave={(e) => (e.currentTarget.style.opacity = '0.7')}
-                    title="View Live Demo"
+                    title="Xem Demo"
                   >
                     <ExternalLink size={18} />
                   </a>

@@ -25,7 +25,7 @@ export default function About() {
       >
         {/* Left Column */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-          <span className="section-label">/ OVERVIEW</span>
+          <span className="section-label">/ TỔNG QUAN</span>
           <h2
             className="display-heading"
             style={{
@@ -34,7 +34,7 @@ export default function About() {
               maxWidth: '24ch',
             }}
           >
-            Engineering performance, automating complexity.
+            Không ngừng học hỏi và tối ưu trải nghiệm người dùng.
           </h2>
         </div>
 
@@ -59,10 +59,10 @@ export default function About() {
             }}
           >
             <p>
-              Fullstack Developer nearly 3 years of hands-on experience in building, maintaining, and scaling modern web applications. Specializing in responsive frontend architectures, high-performance UI optimization, and backend logic integration.
+              Front-end Developer với 3 năm kinh nghiệm phát triển ứng dụng web bằng ReactJS và Next.js. Có kinh nghiệm xây dựng các hệ thống CRM, quản trị doanh nghiệp và ứng dụng xử lý dữ liệu thời gian thực, tập trung vào hiệu năng, trải nghiệm người dùng và chất lượng sản phẩm.
             </p>
             <p>
-              Demonstrated track record of performance optimization, including successfully accelerating 30+ production websites to achieve Google PageSpeed scores of 95+, significantly improving SEO rankings and user engagement.
+              Chủ động nghiên cứu, ứng dụng AI vào công việc nhằm nâng cao năng suất và hiệu quả phát triển phần mềm, đồng thời liên tục cập nhật các công nghệ mới để tạo ra những sản phẩm hiện đại và đáp ứng tốt nhu cầu người dùng.
             </p>
           </div>
 
@@ -87,7 +87,7 @@ export default function About() {
                 fontWeight: 600,
               }}
             >
-              Education
+              Học Vấn
             </span>
             <h3
               style={{
@@ -98,7 +98,7 @@ export default function About() {
                 lineHeight: '1.2',
               }}
             >
-              Industrial University of Ho Chi Minh City
+              Đại Học Công Nghiệp Hồ Chí Minh
             </h3>
             <p
               style={{
@@ -107,7 +107,7 @@ export default function About() {
                 lineHeight: '1.5',
               }}
             >
-              Information Technology — GPA 3.3/4.0
+              Kỹ thuật phần mềm — GPA 3.3/4
             </p>
             <div
               style={{
@@ -137,7 +137,7 @@ export default function About() {
                   color: 'var(--muted-foreground)',
                 }}
               >
-                Graduated 11/2024
+                11/2024
               </span>
             </div>
           </div>

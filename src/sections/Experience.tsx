@@ -1,3 +1,4 @@
+import React from 'react';
 import { Briefcase, Calendar, MapPin } from 'lucide-react';
 
 interface ExperienceItem {
@@ -10,33 +11,64 @@ interface ExperienceItem {
 
 const EXPERIENCES: ExperienceItem[] = [
   {
-    company: 'Company X',
+    company: 'Vietnix',
     role: 'Fullstack Developer',
-    period: '05/2024 - Present',
-    location: 'Ho Chi Minh City',
+    period: '05/2024 - Hiện tại',
+    location: 'TP. Hồ Chí Minh',
     highlights: [
-      'Developed a real-time data visualization web application using Next.js, NestJS, and PostgreSQL, enabling operational monitoring, analytics dashboards, and live data tracking for business analysis.',
-      'Built and maintained the company website using PHP and WordPress, ensuring stable, secure, and reliable operation.',
-      'Improved Google PageSpeed from ~30 to 90+ using lazy loading, CDN, and caching optimization.',
-      'Build a tool that leverages RAG, Embeddings, Function Calling, and LLMs to answer questions based on enterprise documents, reducing document search time by 40% and providing intelligent recommendations.',
-      'Apply Embeddings to build a semantic search feature.',
-      'Researched and implemented performance optimization solutions for websites.',
-      'Collaborated with DevOps on system deployment and incident handling.',
-      'Worked closely with the Marketing team to build landing pages.',
+      'Xây dựng hệ thống theo dõi, phân tích số liệu chiến dịch marketing theo thời gian thực với ReactJS, Redux, Antd, Tailwind Css, WebSocket, ReChart, NodeJS, RESTful API giúp nhà quản lý dễ dàng theo dõi hiệu quả chiến dịch và đưa ra quyết định nhanh chóng.',
+      'Phát triển hệ thống quản lý nội với ReactJS, Redux, Antd và RESTful API, hỗ trợ nhân viên quản lý thông tin công việc và khách hàng cho 120 nhân viên.',
+      'Xây dựng nền tảng AI hỗ trợ quản lý tài khoản Facebook, tự động thu thập dữ liệu, đăng tải và tạo nội dung bằng AI với Next.js, Antd, Tailwind Css, NodeJS, Proxy, PostgreSQL, Playwright, OpenAI API và Vector Database, giúp giảm hơn 70% thời gian xử lý nội dung thủ công.',
+      'Xây dựng hệ thống theo dõi đối thủ với NextJS, Redux, NodeJS, Playwright, PostgreSQL và BullMQ, hỗ trợ giám sát thay đổi website, lưu trữ lịch sử cập nhật và giúp quản lý nhanh chóng phát hiện các thay đổi quan trọng từ đối thủ.',
+      'Triển khai CI/CD pipeline với Git và Docker, hỗ trợ tự động hóa deployment.',
+      'Có kinh nghiệm sử dụng AI Coding Agent (Antigravity) kết hợp skill, rule đảm bảo mã nguồn sạch, đúng logic và có khả năng tái sử dụng cao.',
+      'Quản lý và tối ưu website doanh nghiệp giúp trải nghiệm người dùng tốt với caching và lazyload. Đảm bảo website đạt uptime trên 99%.',
+      'Tối ưu Google PageSpeed đạt trên 90 điểm cho hơn 30 website khách hàng.',
+      'Phối hợp BA, Tester và Marketing để phân tích yêu cầu, đề xuất, thiết kế dữ liệu và triển khai các phương án giải quyết vấn đề.',
     ],
   },
   {
     company: 'Chuta',
-    role: 'Frontend Engineer',
+    role: 'Fullstack Developer',
     period: '02/2023 - 04/2024',
-    location: 'Ho Chi Minh City',
+    location: 'TP. Hồ Chí Minh',
     highlights: [
-      'Developed a responsive rental management web platform using ReactJS, TypeScript, and Tailwind CSS.',
-      'Conducted UI/UX layout optimizations based on user analytics, leading to a measurable increase in conversion rates and user engagement.',
-      'Integrated multiple third-party APIs to automate workflows, synchronize real-time data, and resolve technical issues.',
+      'Xây dựng ứng dụng quản lý cho thuê phòng trọ với ReactJS, Tailwind Css, Redux, Antd, ReChart, NodeJS, RESTful API.',
+      'Lên kế hoạch và phân công nhiệm vụ cho các thành viên.',
+      'Tích hợp các API từ các bên đối tác để đồng bộ dữ liệu và tự động hóa quy trình vận hành.',
+      'Triển khai CI/CD pipeline với Git và Docker.',
+      'Phân tích yêu cầu khách hàng và chuyển đổi thành các tính năng phù hợp với mục tiêu kinh doanh.',
     ],
   },
 ];
+
+const TECH_KEYWORDS = [
+  'AI Coding Agent', 'Antigravity',
+  'OpenAI API', 'Vector Database', 'Google PageSpeed',
+  'Google Maps', 'React Native', 'RESTful API',
+  'Tailwind Css', 'CI/CD pipeline',
+  'ReactJS', 'Next.js', 'NextJS', 'Redux', 'Antd',
+  'WebSocket', 'ReChart', 'NodeJS', 'PostgreSQL',
+  'Playwright', 'BullMQ', 'Docker', 'Git', 'Proxy',
+  'AWS S3', 'AI',
+];
+
+function highlightTech(text: string): React.ReactNode {
+  const sorted = [...TECH_KEYWORDS].sort((a, b) => b.length - a.length);
+  const escaped = sorted.map((k) => k.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'));
+  const regex = new RegExp(`(${escaped.join('|')})`, 'g');
+  const parts = text.split(regex);
+
+  return parts.map((part, i) =>
+    sorted.includes(part) ? (
+      <strong key={i} style={{ color: 'var(--foreground)', fontWeight: 600 }}>
+        {part}
+      </strong>
+    ) : (
+      <React.Fragment key={i}>{part}</React.Fragment>
+    ),
+  );
+}
 
 export default function Experience() {
   return (
@@ -63,7 +95,7 @@ export default function Experience() {
           marginBottom: '4rem',
         }}
       >
-        <span className="section-label">/ PATHWAY</span>
+        <span className="section-label">/ HÀNH TRÌNH</span>
         <h2
           className="display-heading"
           style={{
@@ -71,7 +103,7 @@ export default function Experience() {
             lineHeight: '1.05',
           }}
         >
-          Work Experience
+          Kinh Nghiệm Làm Việc
         </h2>
       </div>
 
@@ -217,7 +249,7 @@ export default function Experience() {
                       listStyleType: 'square',
                     }}
                   >
-                    {highlight}
+                    {highlightTech(highlight)}
                   </li>
                 ))}
               </ul>

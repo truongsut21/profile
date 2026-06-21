@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react'
 
 const NAV_LINKS = [
-  { label: 'Home', href: '#home' },
-  { label: 'About', href: '#about' },
-  { label: 'Experience', href: '#experience' },
-  { label: 'Skills', href: '#skills' },
-  { label: 'Projects', href: '#projects' },
-  { label: 'Reach Us', href: '#contact' },
+  { label: 'Trang chủ', href: '#home' },
+  { label: 'Giới thiệu', href: '#about' },
+  { label: 'Kinh nghiệm', href: '#experience' },
+  { label: 'Kỹ năng', href: '#skills' },
+  { label: 'Dự án', href: '#projects' },
+  { label: 'Liên hệ', href: '#contact' },
 ]
 
 export default function Navbar() {
@@ -70,7 +70,7 @@ export default function Navbar() {
           onMouseEnter={(e) => (e.currentTarget.style.opacity = '0.8')}
           onMouseLeave={(e) => (e.currentTarget.style.opacity = '1')}
         >
-          Do Van Truong<sup style={{ fontSize: '0.6rem', verticalAlign: 'super' }}>®</sup>
+          Đỗ Vân Trường<sup style={{ fontSize: '0.6rem', verticalAlign: 'super' }}>®</sup>
         </a>
 
         {/* Desktop Nav Links */}
@@ -129,7 +129,7 @@ export default function Navbar() {
           onMouseEnter={(e) => (e.currentTarget.style.transform = 'scale(1.03)')}
           onMouseLeave={(e) => (e.currentTarget.style.transform = 'scale(1)')}
         >
-          Begin Journey
+          Liên hệ ngay
         </button>
 
         {/* Mobile Hamburger */}
@@ -164,8 +164,8 @@ export default function Navbar() {
                     ? i === 0
                       ? 'translateY(6.5px) rotate(45deg)'
                       : i === 2
-                      ? 'translateY(-6.5px) rotate(-45deg)'
-                      : 'scaleX(0)'
+                        ? 'translateY(-6.5px) rotate(-45deg)'
+                        : 'scaleX(0)'
                     : 'none',
                 opacity: menuOpen && i === 1 ? 0 : 1,
               }}
@@ -232,7 +232,7 @@ export default function Navbar() {
               width: '100%',
             }}
           >
-            Begin Journey
+            Khám Phá
           </button>
         </div>
       )}
