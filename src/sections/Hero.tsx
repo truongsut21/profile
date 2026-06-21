@@ -1,8 +1,12 @@
+import { useLanguage } from '../hooks/useLanguage';
+
 interface HeroProps {
   onBeginJourney: () => void;
 }
 
 export default function Hero({ onBeginJourney }: HeroProps) {
+  const { t } = useLanguage();
+
   return (
     <section
       id="home"
@@ -32,7 +36,7 @@ export default function Hero({ onBeginJourney }: HeroProps) {
           color: 'var(--foreground)',
         }}
       >
-        Đỗ Vân Trường
+        {t.hero.name}
       </h1>
 
       {/* Subtext */}
@@ -46,7 +50,7 @@ export default function Hero({ onBeginJourney }: HeroProps) {
           fontFamily: 'var(--font-body)',
         }}
       >
-        Front-end Developer với 3 năm kinh nghiệm phát triển ứng dụng web bằng ReactJS và Next.js. Có kinh nghiệm xây dựng các hệ thống CRM, quản trị doanh nghiệp và ứng dụng xử lý dữ liệu thời gian thực, tập trung vào hiệu năng, trải nghiệm người dùng và chất lượng sản phẩm.
+        {t.hero.subtitle}
       </p>
 
       {/* CTA Button */}
@@ -72,7 +76,7 @@ export default function Hero({ onBeginJourney }: HeroProps) {
           e.currentTarget.style.transform = 'scale(1)';
         }}
       >
-        Khám Phá
+        {t.hero.cta}
       </button>
     </section>
   );

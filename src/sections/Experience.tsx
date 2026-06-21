@@ -1,46 +1,6 @@
 import React from 'react';
 import { Briefcase, Calendar, MapPin } from 'lucide-react';
-
-interface ExperienceItem {
-  company: string;
-  role: string;
-  period: string;
-  location: string;
-  highlights: string[];
-}
-
-const EXPERIENCES: ExperienceItem[] = [
-  {
-    company: 'Vietnix',
-    role: 'Fullstack Developer',
-    period: '05/2024 - Hiện tại',
-    location: 'TP. Hồ Chí Minh',
-    highlights: [
-      'Xây dựng hệ thống theo dõi, phân tích số liệu chiến dịch marketing theo thời gian thực với ReactJS, Redux, Antd, Tailwind Css, WebSocket, ReChart, NodeJS, RESTful API giúp nhà quản lý dễ dàng theo dõi hiệu quả chiến dịch và đưa ra quyết định nhanh chóng.',
-      'Phát triển hệ thống quản lý nội với ReactJS, Redux, Antd và RESTful API, hỗ trợ nhân viên quản lý thông tin công việc và khách hàng cho 120 nhân viên.',
-      'Xây dựng nền tảng AI hỗ trợ quản lý tài khoản Facebook, tự động thu thập dữ liệu, đăng tải và tạo nội dung bằng AI với Next.js, Antd, Tailwind Css, NodeJS, Proxy, PostgreSQL, Playwright, OpenAI API và Vector Database, giúp giảm hơn 70% thời gian xử lý nội dung thủ công.',
-      'Xây dựng hệ thống theo dõi đối thủ với NextJS, Redux, NodeJS, Playwright, PostgreSQL và BullMQ, hỗ trợ giám sát thay đổi website, lưu trữ lịch sử cập nhật và giúp quản lý nhanh chóng phát hiện các thay đổi quan trọng từ đối thủ.',
-      'Triển khai CI/CD pipeline với Git và Docker, hỗ trợ tự động hóa deployment.',
-      'Có kinh nghiệm sử dụng AI Coding Agent (Antigravity) kết hợp skill, rule đảm bảo mã nguồn sạch, đúng logic và có khả năng tái sử dụng cao.',
-      'Quản lý và tối ưu website doanh nghiệp giúp trải nghiệm người dùng tốt với caching và lazyload. Đảm bảo website đạt uptime trên 99%.',
-      'Tối ưu Google PageSpeed đạt trên 90 điểm cho hơn 30 website khách hàng.',
-      'Phối hợp BA, Tester và Marketing để phân tích yêu cầu, đề xuất, thiết kế dữ liệu và triển khai các phương án giải quyết vấn đề.',
-    ],
-  },
-  {
-    company: 'Chuta',
-    role: 'Fullstack Developer',
-    period: '02/2023 - 04/2024',
-    location: 'TP. Hồ Chí Minh',
-    highlights: [
-      'Xây dựng ứng dụng quản lý cho thuê phòng trọ với ReactJS, Tailwind Css, Redux, Antd, ReChart, NodeJS, RESTful API.',
-      'Lên kế hoạch và phân công nhiệm vụ cho các thành viên.',
-      'Tích hợp các API từ các bên đối tác để đồng bộ dữ liệu và tự động hóa quy trình vận hành.',
-      'Triển khai CI/CD pipeline với Git và Docker.',
-      'Phân tích yêu cầu khách hàng và chuyển đổi thành các tính năng phù hợp với mục tiêu kinh doanh.',
-    ],
-  },
-];
+import { useLanguage } from '../hooks/useLanguage';
 
 const TECH_KEYWORDS = [
   'AI Coding Agent', 'Antigravity',
@@ -71,6 +31,8 @@ function highlightTech(text: string): React.ReactNode {
 }
 
 export default function Experience() {
+  const { t } = useLanguage();
+
   return (
     <section
       id="experience"
@@ -95,7 +57,7 @@ export default function Experience() {
           marginBottom: '4rem',
         }}
       >
-        <span className="section-label">/ HÀNH TRÌNH</span>
+        <span className="section-label">{t.experience.label}</span>
         <h2
           className="display-heading"
           style={{
@@ -103,7 +65,7 @@ export default function Experience() {
             lineHeight: '1.05',
           }}
         >
-          Kinh Nghiệm Làm Việc
+          {t.experience.heading}
         </h2>
       </div>
 
@@ -129,7 +91,7 @@ export default function Experience() {
           }}
         />
 
-        {EXPERIENCES.map((exp, idx) => (
+        {t.experience.items.map((exp, idx) => (
           <div
             key={idx}
             style={{

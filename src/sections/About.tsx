@@ -1,4 +1,8 @@
+import { useLanguage } from '../hooks/useLanguage';
+
 export default function About() {
+  const { t } = useLanguage();
+
   return (
     <section
       id="about"
@@ -25,7 +29,7 @@ export default function About() {
       >
         {/* Left Column */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-          <span className="section-label">/ TỔNG QUAN</span>
+          <span className="section-label">{t.about.label}</span>
           <h2
             className="display-heading"
             style={{
@@ -34,7 +38,7 @@ export default function About() {
               maxWidth: '24ch',
             }}
           >
-            Không ngừng học hỏi và tối ưu trải nghiệm người dùng.
+            {t.about.heading}
           </h2>
         </div>
 
@@ -58,12 +62,8 @@ export default function About() {
               lineHeight: '1.6',
             }}
           >
-            <p>
-              Front-end Developer với 3 năm kinh nghiệm phát triển ứng dụng web bằng ReactJS và Next.js. Có kinh nghiệm xây dựng các hệ thống CRM, quản trị doanh nghiệp và ứng dụng xử lý dữ liệu thời gian thực, tập trung vào hiệu năng, trải nghiệm người dùng và chất lượng sản phẩm.
-            </p>
-            <p>
-              Chủ động nghiên cứu, ứng dụng AI vào công việc nhằm nâng cao năng suất và hiệu quả phát triển phần mềm, đồng thời liên tục cập nhật các công nghệ mới để tạo ra những sản phẩm hiện đại và đáp ứng tốt nhu cầu người dùng.
-            </p>
+            <p>{t.about.bio1}</p>
+            <p>{t.about.bio2}</p>
           </div>
 
           {/* Education Card */}
@@ -87,7 +87,7 @@ export default function About() {
                 fontWeight: 600,
               }}
             >
-              Học Vấn
+              {t.about.education.label}
             </span>
             <h3
               style={{
@@ -98,7 +98,7 @@ export default function About() {
                 lineHeight: '1.2',
               }}
             >
-              Đại Học Công Nghiệp Hồ Chí Minh
+              {t.about.education.school}
             </h3>
             <p
               style={{
@@ -107,7 +107,7 @@ export default function About() {
                 lineHeight: '1.5',
               }}
             >
-              Kỹ thuật phần mềm — GPA 3.3/4
+              {t.about.education.degree}
             </p>
             <div
               style={{

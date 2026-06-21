@@ -1,17 +1,20 @@
 import { useState, useEffect } from 'react'
-
-const NAV_LINKS = [
-  { label: 'Trang chủ', href: '#home' },
-  { label: 'Giới thiệu', href: '#about' },
-  { label: 'Kinh nghiệm', href: '#experience' },
-  { label: 'Kỹ năng', href: '#skills' },
-  { label: 'Dự án', href: '#projects' },
-  { label: 'Liên hệ', href: '#contact' },
-]
+import { useLanguage } from '../hooks/useLanguage'
+import LanguageSwitcher from './LanguageSwitcher'
 
 export default function Navbar() {
+  const { t } = useLanguage()
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
+
+  const NAV_LINKS = [
+    { label: t.nav.home, href: '#home' },
+    { label: t.nav.about, href: '#about' },
+    { label: t.nav.experience, href: '#experience' },
+    { label: t.nav.skills, href: '#skills' },
+    { label: t.nav.projects, href: '#projects' },
+    { label: t.nav.contact, href: '#contact' },
+  ]
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20)
@@ -109,28 +112,38 @@ export default function Navbar() {
           ))}
         </ul>
 
-        {/* CTA Button */}
-        <button
-          className="liquid-glass hidden-mobile"
-          onClick={() => handleNavClick('#contact')}
+        {/* Desktop Right Actions */}
+        <div
+          className="hidden-mobile"
           style={{
-            borderRadius: '9999px',
-            padding: '0.625rem 1.5rem',
-            fontFamily: 'var(--font-body)',
-            fontSize: '0.65rem',
-            fontWeight: 500,
-            letterSpacing: '0.12em',
-            textTransform: 'uppercase',
-            color: 'var(--foreground)',
-            border: 'none',
-            cursor: 'pointer',
-            transition: 'transform 0.2s ease, opacity 0.2s ease',
+            display: 'flex',
+            alignItems: 'center',
+            gap: '0.75rem',
           }}
-          onMouseEnter={(e) => (e.currentTarget.style.transform = 'scale(1.03)')}
-          onMouseLeave={(e) => (e.currentTarget.style.transform = 'scale(1)')}
         >
-          Liên hệ ngay
-        </button>
+          <LanguageSwitcher />
+          <button
+            className="liquid-glass"
+            onClick={() => handleNavClick('#contact')}
+            style={{
+              borderRadius: '9999px',
+              padding: '0.625rem 1.5rem',
+              fontFamily: 'var(--font-body)',
+              fontSize: '0.65rem',
+              fontWeight: 500,
+              letterSpacing: '0.12em',
+              textTransform: 'uppercase',
+              color: 'var(--foreground)',
+              border: 'none',
+              cursor: 'pointer',
+              transition: 'transform 0.2s ease, opacity 0.2s ease',
+            }}
+            onMouseEnter={(e) => (e.currentTarget.style.transform = 'scale(1.03)')}
+            onMouseLeave={(e) => (e.currentTarget.style.transform = 'scale(1)')}
+          >
+            {t.nav.cta}
+          </button>
+        </div>
 
         {/* Mobile Hamburger */}
         <button
@@ -214,26 +227,37 @@ export default function Navbar() {
               {link.label}
             </button>
           ))}
-          <button
-            className="liquid-glass"
-            onClick={() => handleNavClick('#contact')}
+
+          {/* Mobile Language Switcher + CTA */}
+          <div
             style={{
-              borderRadius: '9999px',
-              padding: '0.75rem 1.5rem',
-              fontFamily: 'var(--font-body)',
-              fontSize: '0.65rem',
-              fontWeight: 500,
-              letterSpacing: '0.12em',
-              textTransform: 'uppercase',
-              color: 'var(--foreground)',
-              border: 'none',
-              cursor: 'pointer',
+              display: 'flex',
+              gap: '0.75rem',
               marginTop: '1rem',
               width: '100%',
             }}
           >
-            Khám Phá
-          </button>
+            <LanguageSwitcher />
+            <button
+              className="liquid-glass"
+              onClick={() => handleNavClick('#contact')}
+              style={{
+                flex: 1,
+                borderRadius: '9999px',
+                padding: '0.75rem 1.5rem',
+                fontFamily: 'var(--font-body)',
+                fontSize: '0.65rem',
+                fontWeight: 500,
+                letterSpacing: '0.12em',
+                textTransform: 'uppercase',
+                color: 'var(--foreground)',
+                border: 'none',
+                cursor: 'pointer',
+              }}
+            >
+              {t.nav.explore}
+            </button>
+          </div>
         </div>
       )}
     </header>

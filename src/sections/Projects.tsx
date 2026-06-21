@@ -1,4 +1,5 @@
 import { ExternalLink } from 'lucide-react';
+import { useLanguage } from '../hooks/useLanguage';
 
 const GithubIcon = ({ size = 18 }: { size?: number }) => (
   <svg
@@ -17,37 +18,9 @@ const GithubIcon = ({ size = 18 }: { size?: number }) => (
   </svg>
 );
 
-
-interface Project {
-  title: string;
-  category: string;
-  period: string;
-  description: string;
-  badges: string[];
-  github?: string;
-  demo?: string;
-}
-
-const PROJECTS: Project[] = [
-  {
-    title: 'Hệ thống quản lý công việc Ontask tích hợp AI',
-    category: 'Fullstack',
-    period: '02/2024 - 05/2024',
-    description: 'Phát triển hệ thống quản lý công việc real-time với ReactJS, Antd, Tailwind, NodeJS, WebSocket, AWS S3 và PostgreSQL, hỗ trợ gợi ý phân công nhiệm vụ, trao đổi trực tiếp trên từng công việc và tối ưu trải nghiệm người dùng. Đạt 10/10 trong khóa luận tốt nghiệp.',
-    badges: ['ReactJS', 'Antd', 'Tailwind', 'NodeJS', 'WebSocket', 'AWS S3', 'PostgreSQL'],
-    github: 'https://github.com/truongsut21',
-  },
-  {
-    title: 'Hệ thống giao hàng vận chuyển Bengo',
-    category: 'Mentor',
-    period: '01/2026 - 05/2026',
-    description: 'Phát triển hệ thống quản lý vận chuyển cho quản lý và tài xế bằng ReactJS, React Native, NodeJS và PostgreSQL. Hỗ trợ cập nhật trạng thái đơn hàng theo thời gian thực, quản lý hồ sơ tài xế, định vị GPS, tích hợp Google Maps, lưu trữ tệp trên AWS S3 và cung cấp RESTful API cho ứng dụng web/mobile.',
-    badges: ['ReactJS', 'React Native', 'NodeJS', 'PostgreSQL', 'Google Maps', 'AWS S3'],
-    github: 'https://github.com/truongsut21',
-  },
-];
-
 export default function Projects() {
+  const { t } = useLanguage();
+
   return (
     <section
       id="projects"
@@ -72,7 +45,7 @@ export default function Projects() {
           marginBottom: '4rem',
         }}
       >
-        <span className="section-label">/ DỰ ÁN</span>
+        <span className="section-label">{t.projects.label}</span>
         <h2
           className="display-heading"
           style={{
@@ -80,7 +53,7 @@ export default function Projects() {
             lineHeight: '1.05',
           }}
         >
-          Dự Án Cá Nhân
+          {t.projects.heading}
         </h2>
       </div>
 
@@ -93,7 +66,7 @@ export default function Projects() {
         }}
         className="grid-desktop-2"
       >
-        {PROJECTS.map((project, idx) => (
+        {t.projects.items.map((project, idx) => (
           <div
             key={idx}
             className="liquid-glass"
@@ -187,9 +160,9 @@ export default function Projects() {
 
               {/* Links */}
               <div style={{ display: 'flex', gap: '0.75rem' }}>
-                {project.github && (
+                {'github' in project && (project as { github?: string }).github && (
                   <a
-                    href={project.github}
+                    href={(project as { github: string }).github}
                     target="_blank"
                     rel="noopener noreferrer"
                     style={{
@@ -201,14 +174,14 @@ export default function Projects() {
                     }}
                     onMouseEnter={(e) => (e.currentTarget.style.opacity = '1')}
                     onMouseLeave={(e) => (e.currentTarget.style.opacity = '0.7')}
-                    title="Xem GitHub"
+                    title={t.projects.viewGithub}
                   >
                     <GithubIcon size={18} />
                   </a>
                 )}
-                {project.demo && (
+                {'demo' in project && (project as { demo?: string }).demo && (
                   <a
-                    href={project.demo}
+                    href={(project as { demo: string }).demo}
                     target="_blank"
                     rel="noopener noreferrer"
                     style={{
@@ -220,7 +193,7 @@ export default function Projects() {
                     }}
                     onMouseEnter={(e) => (e.currentTarget.style.opacity = '1')}
                     onMouseLeave={(e) => (e.currentTarget.style.opacity = '0.7')}
-                    title="Xem Demo"
+                    title={t.projects.viewDemo}
                   >
                     <ExternalLink size={18} />
                   </a>

@@ -1,3 +1,5 @@
+import { useLanguage } from '../hooks/useLanguage';
+
 interface SkillCategory {
   title: string;
   skills: string[];
@@ -23,6 +25,8 @@ const SKILL_GROUPS: SkillCategory[] = [
 ];
 
 export default function Skills() {
+  const { t } = useLanguage();
+
   return (
     <section
       id="skills"
@@ -47,7 +51,7 @@ export default function Skills() {
           marginBottom: '4rem',
         }}
       >
-        <span className="section-label">/ NĂNG LỰC</span>
+        <span className="section-label">{t.skills.label}</span>
         <h2
           className="display-heading"
           style={{
@@ -55,7 +59,7 @@ export default function Skills() {
             lineHeight: '1.05',
           }}
         >
-          Kỹ Năng Chuyên Môn
+          {t.skills.heading}
         </h2>
       </div>
 

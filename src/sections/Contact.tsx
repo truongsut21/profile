@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Copy, Check, Mail, Phone, Send } from 'lucide-react';
 import { discordService } from '../services/discord.service';
+import { useLanguage } from '../hooks/useLanguage';
 
 const GithubIcon = ({ size = 18 }: { size?: number }) => (
   <svg
@@ -21,13 +22,14 @@ const GithubIcon = ({ size = 18 }: { size?: number }) => (
 
 
 export default function Contact() {
+  const { t } = useLanguage();
   const [copied, setCopied] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     message: '',
   });
-  const [status, setStatus] = useState<string | null>(null);
+  const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error_empty' | 'error_failed'>('idle');
 
   const handleCopyEmail = async () => {
     try {
@@ -47,11 +49,11 @@ export default function Contact() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!formData.name || !formData.email || !formData.message) {
-      setStatus('Vui lòng điền đầy đủ thông tin.');
+      setStatus('error_empty');
       return;
     }
 
-    setStatus('Đang gửi tin nhắn...');
+    setStatus('sending');
     const success = await discordService.sendNotification(
       formData.name,
       formData.email,
@@ -59,13 +61,35 @@ export default function Contact() {
     );
 
     if (success) {
-      setStatus('Cảm ơn bạn! Tin nhắn đã được gửi thành công.');
+      setStatus('success');
       setFormData({ name: '', email: '', message: '' });
-      setTimeout(() => setStatus(null), 5000);
+      setTimeout(() => setStatus('idle'), 5000);
     } else {
-      setStatus('Gửi tin nhắn thất bại. Vui lòng thử lại hoặc sao chép email trực tiếp.');
+      setStatus('error_failed');
     }
   };
+
+  /** Map status enum to translated message string */
+  const getStatusMessage = (): string | null => {
+    switch (status) {
+      case 'sending': return t.contact.sending;
+      case 'success': return t.contact.success;
+      case 'error_empty': return t.contact.errorEmpty;
+      case 'error_failed': return t.contact.errorFailed;
+      default: return null;
+    }
+  };
+
+  /** Map status enum to color */
+  const getStatusColor = (): string => {
+    switch (status) {
+      case 'success': return '#10B981';
+      case 'sending': return '#3B82F6';
+      default: return '#EF4444';
+    }
+  };
+
+  const statusMessage = getStatusMessage();
 
   return (
     <section
@@ -91,7 +115,7 @@ export default function Contact() {
           marginBottom: '4rem',
         }}
       >
-        <span className="section-label">/ LIÊN HỆ</span>
+        <span className="section-label">{t.contact.label}</span>
         <h2
           className="display-heading"
           style={{
@@ -99,7 +123,7 @@ export default function Contact() {
             lineHeight: '1.05',
           }}
         >
-          Liên Hệ
+          {t.contact.heading}
         </h2>
       </div>
 
@@ -124,7 +148,7 @@ export default function Contact() {
                 marginBottom: '1rem',
               }}
             >
-              Thông Tin Liên Hệ
+              {t.contact.infoTitle}
             </h3>
             <p
               style={{
@@ -135,7 +159,7 @@ export default function Contact() {
                 marginBottom: '2rem',
               }}
             >
-              Đừng ngại liên hệ với tôi để hợp tác, trao đổi về dự án, hoặc đơn giản là gửi lời chào.
+              {t.contact.infoDesc}
             </p>
           </div>
 
@@ -172,10 +196,10 @@ export default function Contact() {
                   fontWeight: 500,
                   transition: 'color 0.2s',
                 }}
-                title="Sao chép Email"
+                title={t.contact.copyEmail}
               >
                 {copied ? <Check size={14} /> : <Copy size={14} />}
-                <span>{copied ? 'Đã sao chép!' : 'Sao chép'}</span>
+                <span>{copied ? t.contact.copied : t.contact.copy}</span>
               </button>
             </div>
 
@@ -215,10 +239,10 @@ export default function Contact() {
                 }}
                 onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--foreground)')}
                 onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--muted-foreground)')}
-                title="Gọi ngay"
+                title={t.contact.callNow}
               >
                 <Phone size={14} />
-                <span>Gọi ngay</span>
+                <span>{t.contact.callNow}</span>
               </a>
             </div>
 
@@ -245,7 +269,7 @@ export default function Contact() {
               onMouseLeave={(e) => (e.currentTarget.style.transform = 'scale(1)')}
             >
               <GithubIcon size={18} />
-              <span>Kết nối GitHub</span>
+              <span>{t.contact.connectGithub}</span>
             </a>
           </div>
         </div>
@@ -261,14 +285,14 @@ export default function Contact() {
               marginBottom: '1.5rem',
             }}
           >
-            Gửi Tin Nhắn
+            {t.contact.formTitle}
           </h3>
 
           <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
             {/* Name Input */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
               <label style={{ fontSize: '0.75rem', color: 'var(--muted-foreground)', fontWeight: 500 }}>
-                Họ và Tên
+                {t.contact.nameLabel}
               </label>
               <input
                 type="text"
@@ -276,7 +300,7 @@ export default function Contact() {
                 value={formData.name}
                 onChange={handleInputChange}
                 className="glass-input"
-                placeholder="Nguyễn Văn A"
+                placeholder={t.contact.namePlaceholder}
                 required
               />
             </div>
@@ -284,7 +308,7 @@ export default function Contact() {
             {/* Email / Phone Input */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
               <label style={{ fontSize: '0.75rem', color: 'var(--muted-foreground)', fontWeight: 500 }}>
-                Email hoặc SĐT
+                {t.contact.emailLabel}
               </label>
               <input
                 type="text"
@@ -292,7 +316,7 @@ export default function Contact() {
                 value={formData.email}
                 onChange={handleInputChange}
                 className="glass-input"
-                placeholder="example@gmail.com / 0901234567"
+                placeholder={t.contact.emailPlaceholder}
                 required
               />
             </div>
@@ -300,7 +324,7 @@ export default function Contact() {
             {/* Message Input */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
               <label style={{ fontSize: '0.75rem', color: 'var(--muted-foreground)', fontWeight: 500 }}>
-                Tin Nhắn
+                {t.contact.messageLabel}
               </label>
               <textarea
                 name="message"
@@ -308,21 +332,21 @@ export default function Contact() {
                 onChange={handleInputChange}
                 className="glass-input"
                 rows={5}
-                placeholder="Hãy cho tôi biết về dự án của bạn..."
+                placeholder={t.contact.messagePlaceholder}
                 style={{ resize: 'vertical' }}
                 required
               />
             </div>
 
             {/* Status Message */}
-            {status && (
+            {statusMessage && (
               <p
                 style={{
                   fontSize: '0.85rem',
-                  color: status.includes('thành công') ? '#10B981' : status.includes('Đang gửi') ? '#3B82F6' : '#EF4444',
+                  color: getStatusColor(),
                 }}
               >
-                {status}
+                {statusMessage}
               </p>
             )}
 
@@ -349,7 +373,7 @@ export default function Contact() {
               onMouseLeave={(e) => (e.currentTarget.style.transform = 'scale(1)')}
             >
               <Send size={16} />
-              <span>Gửi Tin Nhắn</span>
+              <span>{t.contact.submit}</span>
             </button>
           </form>
         </div>
