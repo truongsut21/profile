@@ -20,6 +20,7 @@ export interface ProjectItem {
   badges: string[];
   github?: string;
   demo?: string;
+  screenshots?: string[];
 }
 
 export interface Translations {
@@ -64,6 +65,8 @@ export interface Translations {
     heading: string;
     viewGithub: string;
     viewDemo: string;
+    showMore: string;
+    showLess: string;
     items: ProjectItem[];
   };
   contact: {

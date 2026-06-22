@@ -21,9 +21,9 @@ export const en: Translations = {
 
   // ── Hero Section ──
   hero: {
-    name: 'Đỗ Vân Trường',
+    name: 'Do Van Truong',
     subtitle:
-      'Front-end Developer with 3 years of experience building web applications using ReactJS and Next.js. Skilled in developing CRM systems, enterprise management platforms, and real-time data processing applications — focused on performance, user experience, and product quality.',
+      'Front-end Developer with 3 years of experience building web applications using ReactJS and Next.js. Skilled in developing CRM systems and enterprise management platforms, focused on performance, optimizing user experience, and product quality.',
     cta: 'Explore',
   },
 
@@ -31,7 +31,7 @@ export const en: Translations = {
   about: {
     label: '/ OVERVIEW',
     heading: 'Continuously learning and optimizing user experience.',
-    bio1: 'Front-end Developer with 3 years of experience building web applications using ReactJS and Next.js. Skilled in developing CRM systems, enterprise management platforms, and real-time data processing applications — focused on performance, user experience, and product quality.',
+    bio1: 'Front-end Developer with 3 years of experience building web applications using ReactJS and Next.js. Skilled in developing CRM systems and enterprise management platforms, focused on performance, optimizing user experience, and product quality.',
     bio2: 'Proactively researching and applying AI to improve productivity and software development efficiency, while continuously adopting new technologies to create modern products that meet user needs.',
     education: {
       label: 'Education',
@@ -91,7 +91,18 @@ export const en: Translations = {
     heading: 'Personal Projects',
     viewGithub: 'View GitHub',
     viewDemo: 'View Demo',
+    showMore: 'Show more',
+    showLess: 'Show less',
     items: [
+      {
+        title: 'Delivery & Logistics System — Bengo',
+        category: 'Fullstack',
+        period: '01/2026 - 05/2026',
+        description:
+          'Developed a logistics management system for managers and drivers using ReactJS, React Native, NodeJS, and PostgreSQL. Supports real-time order status updates, driver profile management, GPS tracking, Google Maps integration, AWS S3 file storage, and RESTful API for web/mobile applications.',
+        badges: ['ReactJS', 'React Native', 'NodeJS', 'PostgreSQL', 'Google Maps', 'AWS S3'],
+        screenshots: ['/pj1_1.jpg', '/pj1_2.jpg', '/pj1_3.jpg'],
+      },
       {
         title: 'AI-integrated Task Management System — Ontask',
         category: 'Fullstack',
@@ -99,14 +110,7 @@ export const en: Translations = {
         description:
           'Developed a real-time task management system with ReactJS, Antd, Tailwind, NodeJS, WebSocket, AWS S3, and PostgreSQL, featuring AI-powered task assignment suggestions, direct messaging on each task, and optimized user experience. Achieved a perfect 10/10 score in graduation thesis.',
         badges: ['ReactJS', 'Antd', 'Tailwind', 'NodeJS', 'WebSocket', 'AWS S3', 'PostgreSQL'],
-      },
-      {
-        title: 'Delivery & Logistics System — Bengo',
-        category: 'Mentor',
-        period: '01/2026 - 05/2026',
-        description:
-          'Developed a logistics management system for managers and drivers using ReactJS, React Native, NodeJS, and PostgreSQL. Supports real-time order status updates, driver profile management, GPS tracking, Google Maps integration, AWS S3 file storage, and RESTful API for web/mobile applications.',
-        badges: ['ReactJS', 'React Native', 'NodeJS', 'PostgreSQL', 'Google Maps', 'AWS S3'],
+        screenshots: ['/pj2_1.png', '/pj2_2.png', '/pj2_3.jpg'],
       },
       {
         title: 'Portfolio Landing Page',
@@ -115,6 +119,7 @@ export const en: Translations = {
         description:
           'Built a personal portfolio landing page with ReactJS, Tailwind CSS, and Vercel, leveraging AI for modern interface design. Optimized SEO and achieved a perfect 100 score across all Google PageSpeed metrics.',
         badges: ['ReactJS', 'Tailwind CSS', 'Vercel', 'AI', 'SEO'],
+        screenshots: ['/pj3_1.jpg', '/pj3_2.jpg'],
       },
     ],
   },

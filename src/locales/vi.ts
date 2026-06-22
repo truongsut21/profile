@@ -22,7 +22,7 @@ export const vi: Translations = {
   hero: {
     name: 'Đỗ Vân Trường',
     subtitle:
-      'Front-end Developer với 3 năm kinh nghiệm phát triển ứng dụng web bằng ReactJS và Next.js. Có kinh nghiệm xây dựng các hệ thống CRM, quản trị doanh nghiệp và ứng dụng xử lý dữ liệu thời gian thực, tập trung vào hiệu năng, trải nghiệm người dùng và chất lượng sản phẩm.',
+      'Front-end Developer với 3 năm kinh nghiệm phát triển ứng dụng web bằng ReactJS và Next.js. Có kinh nghiệm xây dựng các hệ thống CRM và quản trị doanh nghiệp, tập trung vào hiệu năng, tối ưu trải nghiệm người dùng và chất lượng sản phẩm.',
     cta: 'Khám Phá',
   },
 
@@ -30,7 +30,7 @@ export const vi: Translations = {
   about: {
     label: '/ TỔNG QUAN',
     heading: 'Không ngừng học hỏi và tối ưu trải nghiệm người dùng.',
-    bio1: 'Front-end Developer với 3 năm kinh nghiệm phát triển ứng dụng web bằng ReactJS và Next.js. Có kinh nghiệm xây dựng các hệ thống CRM, quản trị doanh nghiệp và ứng dụng xử lý dữ liệu thời gian thực, tập trung vào hiệu năng, trải nghiệm người dùng và chất lượng sản phẩm.',
+    bio1: 'Front-end Developer với 3 năm kinh nghiệm phát triển ứng dụng web bằng ReactJS và Next.js. Có kinh nghiệm xây dựng các hệ thống CRM và quản trị doanh nghiệp, tập trung vào hiệu năng, tối ưu trải nghiệm người dùng và chất lượng sản phẩm.',
     bio2: 'Chủ động nghiên cứu, ứng dụng AI vào công việc nhằm nâng cao năng suất và hiệu quả phát triển phần mềm, đồng thời liên tục cập nhật các công nghệ mới để tạo ra những sản phẩm hiện đại và đáp ứng tốt nhu cầu người dùng.',
     education: {
       label: 'Học Vấn',
@@ -90,7 +90,18 @@ export const vi: Translations = {
     heading: 'Dự Án Cá Nhân',
     viewGithub: 'Xem GitHub',
     viewDemo: 'Xem Demo',
+    showMore: 'Xem thêm',
+    showLess: 'Thu gọn',
     items: [
+      {
+        title: 'Hệ thống giao hàng vận chuyển Bengo',
+        category: 'Fullstack',
+        period: '01/2026 - 05/2026',
+        description:
+          'Phát triển hệ thống quản lý vận chuyển cho quản lý và tài xế bằng ReactJS, React Native, NodeJS và PostgreSQL. Hỗ trợ cập nhật trạng thái đơn hàng theo thời gian thực, quản lý hồ sơ tài xế, định vị GPS, tích hợp Google Maps, lưu trữ tệp trên AWS S3 và cung cấp RESTful API cho ứng dụng web/mobile.',
+        badges: ['ReactJS', 'React Native', 'NodeJS', 'PostgreSQL', 'Google Maps', 'AWS S3'],
+        screenshots: ['/pj1_1.jpg', '/pj1_2.jpg', '/pj1_3.jpg'],
+      },
       {
         title: 'Hệ thống quản lý công việc Ontask tích hợp AI',
         category: 'Fullstack',
@@ -98,14 +109,7 @@ export const vi: Translations = {
         description:
           'Phát triển hệ thống quản lý công việc real-time với ReactJS, Antd, Tailwind, NodeJS, WebSocket, AWS S3 và PostgreSQL, hỗ trợ gợi ý phân công nhiệm vụ, trao đổi trực tiếp trên từng công việc và tối ưu trải nghiệm người dùng. Đạt 10/10 trong khóa luận tốt nghiệp.',
         badges: ['ReactJS', 'Antd', 'Tailwind', 'NodeJS', 'WebSocket', 'AWS S3', 'PostgreSQL'],
-      },
-      {
-        title: 'Hệ thống giao hàng vận chuyển Bengo',
-        category: 'Mentor',
-        period: '01/2026 - 05/2026',
-        description:
-          'Phát triển hệ thống quản lý vận chuyển cho quản lý và tài xế bằng ReactJS, React Native, NodeJS và PostgreSQL. Hỗ trợ cập nhật trạng thái đơn hàng theo thời gian thực, quản lý hồ sơ tài xế, định vị GPS, tích hợp Google Maps, lưu trữ tệp trên AWS S3 và cung cấp RESTful API cho ứng dụng web/mobile.',
-        badges: ['ReactJS', 'React Native', 'NodeJS', 'PostgreSQL', 'Google Maps', 'AWS S3'],
+        screenshots: ['/pj2_1.png', '/pj2_2.png', '/pj2_3.jpg'],
       },
       {
         title: 'Xây dựng landing page portfolio',
@@ -114,6 +118,7 @@ export const vi: Translations = {
         description:
           'Xây dựng landing page portfolio cá nhân với ReactJS, Tailwind CSS và Vercel, ứng dụng AI trong thiết kế giao diện hiện đại. Tối ưu SEO và 100 điểm trên tất cả các chỉ số Google PageSpeed.',
         badges: ['ReactJS', 'Tailwind CSS', 'Vercel', 'AI', 'SEO'],
+        screenshots: ['/pj3_1.jpg', '/pj3_2.jpg'],
       },
     ],
   },
