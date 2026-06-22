@@ -353,7 +353,7 @@ export default function Contact() {
             {/* Submit Button */}
             <button
               type="submit"
-              className="liquid-glass"
+              className="liquid-glass btn-sweep-line"
               style={{
                 borderRadius: '0.5rem',
                 padding: '1rem',

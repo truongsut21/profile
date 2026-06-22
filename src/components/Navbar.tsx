@@ -123,7 +123,7 @@ export default function Navbar() {
         >
           <LanguageSwitcher />
           <button
-            className="liquid-glass"
+            className="liquid-glass btn-sweep-line"
             onClick={() => handleNavClick('#contact')}
             style={{
               borderRadius: '9999px',

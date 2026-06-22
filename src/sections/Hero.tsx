@@ -55,7 +55,7 @@ export default function Hero({ onBeginJourney }: HeroProps) {
 
       {/* CTA Button */}
       <button
-        className="liquid-glass"
+        className="liquid-glass btn-sweep-line"
         onClick={onBeginJourney}
         style={{
           borderRadius: '9999px',
