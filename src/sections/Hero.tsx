@@ -68,6 +68,9 @@ export default function Hero({ onBeginJourney }: HeroProps) {
           border: 'none',
           cursor: 'pointer',
           transition: 'transform 0.2s ease',
+          justifyContent: 'center',
+          gap: '0.375rem',
+          minWidth: '9rem',
         }}
         onMouseEnter={(e) => {
           e.currentTarget.style.transform = 'scale(1.03)';

@@ -30,7 +30,9 @@ export default function LanguageSwitcher() {
       style={{
         display: 'flex',
         alignItems: 'center',
+        justifyContent: 'center',
         gap: '0.375rem',
+        minWidth: '5rem',
         padding: '0.4rem 0.75rem',
         borderRadius: '9999px',
         border: '1px solid rgba(255, 255, 255, 0.1)',

@@ -73,7 +73,7 @@ export default function Navbar() {
           onMouseEnter={(e) => (e.currentTarget.style.opacity = '0.8')}
           onMouseLeave={(e) => (e.currentTarget.style.opacity = '1')}
         >
-          Đỗ Vân Trường<sup style={{ fontSize: '0.6rem', verticalAlign: 'super' }}>®</sup>
+          {t.hero.name}<sup style={{ fontSize: '0.6rem', verticalAlign: 'super' }}>®</sup>
         </a>
 
         {/* Desktop Nav Links */}

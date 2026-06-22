@@ -15,7 +15,7 @@ export const vi: Translations = {
     projects: 'Dự án',
     contact: 'Liên hệ',
     cta: 'Liên hệ ngay',
-    explore: 'Khám Phá',
+    explore: 'Xem thêm',
   },
 
   // ── Hero Section ──
@@ -23,7 +23,7 @@ export const vi: Translations = {
     name: 'Đỗ Vân Trường',
     subtitle:
       'Front-end Developer với 3 năm kinh nghiệm phát triển ứng dụng web bằng ReactJS và Next.js. Có kinh nghiệm xây dựng các hệ thống CRM và quản trị doanh nghiệp, tập trung vào hiệu năng, tối ưu trải nghiệm người dùng và chất lượng sản phẩm.',
-    cta: 'Khám Phá',
+    cta: 'Xem thêm',
   },
 
   // ── About Section ──
