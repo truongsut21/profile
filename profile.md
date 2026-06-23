@@ -1,4 +1,4 @@
-Create a high-end, single-page portfolio website for a Fullstack Developer using React + Vite + Tailwind CSS + TypeScript + Lucide React icons. The design must be ultra-minimalist, cinematic, and use a glassmorphic/liquid-glass visual language.
+Create a high-end, single-page portfolio website for a Front-end Developer using React + Vite + Tailwind CSS + TypeScript + Lucide React icons. The design must be ultra-minimalist, cinematic, and use a glassmorphic/liquid-glass visual language.
 
 ---
 1. GLOBAL CONFIGURATION & STYLING
@@ -72,7 +72,7 @@ Animations:
 3. HERO SECTION (Fullscreen backdrop video, vertically centered)
 - Position relative, z-10, flex column, centered, text-center, px-6, h-screen.
 - H1: "Where dreams rise through the silence." — text-5xl sm:text-7xl md:text-8xl, leading-[0.95], tracking-[-2.46px], max-w-7xl, font-normal, Instrument Serif. Wrap the words "dreams" and "through the silence." in <em className="not-italic text-muted-foreground"> for visual contrast. Apply class "animate-fade-rise".
-- Subtext: text-muted-foreground text-sm sm:text-base max-w-2xl mt-8 leading-relaxed. Use the text: "I am Do Van Truong, a Fullstack Developer building high-performance architectures and intelligent systems. Amid the digital noise, I engineer speed, absolute focus, and fluid interfaces." Apply class "animate-fade-rise-delay".
+- Subtext: text-muted-foreground text-sm sm:text-base max-w-2xl mt-8 leading-relaxed. Use the text: "I am Do Van Truong, a Front-end Developer building high-performance architectures and intelligent systems. Amid the digital noise, I engineer speed, absolute focus, and fluid interfaces." Apply class "animate-fade-rise-delay".
 - CTA button: "Liên hệ ngay", .liquid-glass class, rounded-full, px-14, py-5, text-xs uppercase, tracking-widest, mt-12, hover:scale-[1.03] cursor-pointer. Apply class "animate-fade-rise-delay-2".
 
 ---
@@ -80,7 +80,7 @@ Animations:
 - Divide into a two-column grid on desktop.
 - Left column: Section title "/ OVERVIEW" in small mono text, and a display heading: "Engineering performance, automating complexity."
 - Right column: Paragraphs displaying his professional profile:
-  - Fullstack Developer with 2.5 years of experience specializing in frontend development, building and optimizing modern web applications and interfaces.
+  - Front-end Developer with 2.5 years of experience specializing in frontend development, building and optimizing modern web applications and interfaces.
   - Successfully optimized 30+ websites to achieve Google PageSpeed scores above 95, improving overall speed and organic performance.
   - Education card utilizing .liquid-glass containing: "Industrial University of Ho Chi Minh City" — Information Technology, GPA 3.3/4, TOEIC 550, Graduated 11/2024.
 
@@ -90,7 +90,7 @@ Animations:
 - Chronological layout presenting his career path with technology icons (represented as minimalist Lucide React icons or badges with .liquid-glass styling):
 
   * Company: Company X (05/2024 - Present)
-    - Role: Fullstack Developer
+    - Role: Front-end Developer
     - Location: Ho Chi Minh City
     - Bullet points outlining duties:
       - Developed a real-time data visualization web application using Next.js, NestJS, and PostgreSQL, enabling operational monitoring, analytics dashboards, and live data tracking.

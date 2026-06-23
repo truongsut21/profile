@@ -48,7 +48,7 @@ export const en: Translations = {
     items: [
       {
         company: 'Vietnix',
-        role: 'Fullstack Developer',
+        role: 'Front-end Developer',
         period: '05/2024 - Present',
         location: 'Ho Chi Minh City',
         highlights: [
@@ -65,7 +65,7 @@ export const en: Translations = {
       },
       {
         company: 'Chuta',
-        role: 'Fullstack Developer',
+        role: 'Front-end Developer',
         period: '02/2023 - 04/2024',
         location: 'Ho Chi Minh City',
         highlights: [
