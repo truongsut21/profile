@@ -145,46 +145,55 @@ export default function Navbar() {
           </button>
         </div>
 
-        {/* Mobile Hamburger */}
-        <button
-          id="mobile-menu-btn"
+        {/* Mobile: Language Switcher + Hamburger */}
+        <div
           className="show-mobile"
-          onClick={() => setMenuOpen(!menuOpen)}
-          aria-label="Toggle menu"
-          aria-expanded={menuOpen}
           style={{
-            background: 'none',
-            border: 'none',
-            cursor: 'pointer',
             display: 'none',
-            flexDirection: 'column',
-            gap: '5px',
-            padding: '4px',
+            alignItems: 'center',
+            gap: '0.75rem',
           }}
         >
-          {[0, 1, 2].map((i) => (
-            <span
-              key={i}
-              style={{
-                display: 'block',
-                width: '22px',
-                height: '1.5px',
-                background: 'var(--foreground)',
-                borderRadius: '2px',
-                transition: 'transform 0.3s ease, opacity 0.3s ease',
-                transform:
-                  menuOpen
-                    ? i === 0
-                      ? 'translateY(6.5px) rotate(45deg)'
-                      : i === 2
-                        ? 'translateY(-6.5px) rotate(-45deg)'
-                        : 'scaleX(0)'
-                    : 'none',
-                opacity: menuOpen && i === 1 ? 0 : 1,
-              }}
-            />
-          ))}
-        </button>
+          <LanguageSwitcher />
+          <button
+            id="mobile-menu-btn"
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label="Toggle menu"
+            aria-expanded={menuOpen}
+            style={{
+              background: 'none',
+              border: 'none',
+              cursor: 'pointer',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '5px',
+              padding: '4px',
+            }}
+          >
+            {[0, 1, 2].map((i) => (
+              <span
+                key={i}
+                style={{
+                  display: 'block',
+                  width: '22px',
+                  height: '1.5px',
+                  background: 'var(--foreground)',
+                  borderRadius: '2px',
+                  transition: 'transform 0.3s ease, opacity 0.3s ease',
+                  transform:
+                    menuOpen
+                      ? i === 0
+                        ? 'translateY(6.5px) rotate(45deg)'
+                        : i === 2
+                          ? 'translateY(-6.5px) rotate(-45deg)'
+                          : 'scaleX(0)'
+                      : 'none',
+                  opacity: menuOpen && i === 1 ? 0 : 1,
+                }}
+              />
+            ))}
+          </button>
+        </div>
       </nav>
 
       {/* Mobile Dropdown Menu */}
@@ -228,36 +237,27 @@ export default function Navbar() {
             </button>
           ))}
 
-          {/* Mobile Language Switcher + CTA */}
-          <div
+          {/* Mobile CTA */}
+          <button
+            className="liquid-glass btn-sweep-line"
+            onClick={() => handleNavClick('#contact')}
             style={{
-              display: 'flex',
-              gap: '0.75rem',
-              marginTop: '1rem',
               width: '100%',
+              marginTop: '1rem',
+              borderRadius: '9999px',
+              padding: '0.75rem 1.5rem',
+              fontFamily: 'var(--font-body)',
+              fontSize: '0.65rem',
+              fontWeight: 500,
+              letterSpacing: '0.12em',
+              textTransform: 'uppercase',
+              color: 'var(--foreground)',
+              border: 'none',
+              cursor: 'pointer',
             }}
           >
-            <LanguageSwitcher />
-            <button
-              className="liquid-glass"
-              onClick={() => handleNavClick('#contact')}
-              style={{
-                flex: 1,
-                borderRadius: '9999px',
-                padding: '0.75rem 1.5rem',
-                fontFamily: 'var(--font-body)',
-                fontSize: '0.65rem',
-                fontWeight: 500,
-                letterSpacing: '0.12em',
-                textTransform: 'uppercase',
-                color: 'var(--foreground)',
-                border: 'none',
-                cursor: 'pointer',
-              }}
-            >
-              {t.nav.explore}
-            </button>
-          </div>
+            {t.hero.cta}
+          </button>
         </div>
       )}
     </header>
