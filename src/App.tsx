@@ -1,4 +1,5 @@
 import './index.css';
+import { SpeedInsights } from '@vercel/speed-insights/react';
 import Navbar from './components/Navbar';
 import Hero from './sections/Hero';
 import About from './sections/About';
@@ -68,6 +69,7 @@ function App() {
         {/* Section 8 — Contact Details & Form */}
         <Contact />
       </div>
+      <SpeedInsights />
     </div>
   );
 }
